@@ -107,7 +107,7 @@ is $aio->variant, '454';
 #
 
 my $in = Bio::Assembly::IO->new(
-    -file    => test_input_file('consed_project','edit_dir','test_project.phrap.out'),
+    -file    => test_input_file('test_project.phrap.out'),
     -verbose => -1,
 );
 isa_ok $in, 'Bio::Assembly::IO';
@@ -116,7 +116,7 @@ while (my $contig = $in->next_contig) {
 }
 
 $in = Bio::Assembly::IO->new(
-    -file    => test_input_file('consed_project','edit_dir','test_project.phrap.out'),
+    -file    => test_input_file('test_project.phrap.out'),
     -verbose => -1,
 );
 isa_ok $in, 'Bio::Assembly::IO';
@@ -130,7 +130,7 @@ TODO: {
 
 $in->verbose(-1);
 $in = Bio::Assembly::IO->new(
-    -file    => test_input_file('consed_project','edit_dir','test_project.phrap.out'),
+    -file    => test_input_file('test_project.phrap.out'),
     -verbose => -1,
 );
 ok $sc = $in->next_assembly;
@@ -194,7 +194,7 @@ is @all_seq_ids, 4;
 
 # ACE Consed variant (default)
 $aio = Bio::Assembly::IO->new(
-    -file   => test_input_file('consed_project','edit_dir','test_project.fasta.screen.ace.2'),
+    -file   => test_input_file('test_project.fasta.screen.ace.2'),
     -format => 'ace',
 );
 
